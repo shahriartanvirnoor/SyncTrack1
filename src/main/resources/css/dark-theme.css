@@ -1,0 +1,957 @@
+/* dark-theme.css - SyncTrack Dark Theme */
+/* Professional dark theme with vibrant accents for productivity */
+
+/* ==================== ROOT VARIABLES ==================== */
+.root {
+    /* Primary Colors */
+    -fx-primary-color: #667eea;
+    -fx-primary-dark: #5a67d8;
+    -fx-primary-light: #7c8cf0;
+    -fx-primary-gradient: linear-gradient(to right, #667eea, #764ba2);
+    
+    /* Secondary Colors */
+    -fx-secondary-color: #764ba2;
+    -fx-secondary-dark: #6a3d91;
+    -fx-secondary-light: #8a5cb3;
+    
+    /* Accent Colors */
+    -fx-success-color: #4caf50;
+    -fx-warning-color: #ff9800;
+    -fx-error-color: #f44336;
+    -fx-info-color: #2196f3;
+    -fx-info-dark: #1976d2;
+    
+    /* Background Colors */
+    -fx-bg-primary: #1a1a2e;
+    -fx-bg-secondary: #16213e;
+    -fx-bg-tertiary: #0f3460;
+    -fx-bg-card: #1e1e2f;
+    -fx-bg-card-hover: #2a2a3e;
+    -fx-bg-input: #252540;
+    -fx-bg-table: #1a1a2e;
+    -fx-bg-table-alt: #22223b;
+    
+    /* Text Colors */
+    -fx-text-primary: #ffffff;
+    -fx-text-secondary: #b8b8d4;
+    -fx-text-tertiary: #8a8aa8;
+    -fx-text-disabled: #555570;
+    -fx-text-on-primary: #ffffff;
+    -fx-text-on-accent: #ffffff;
+    
+    /* Border Colors */
+    -fx-border-color: #2a2a40;
+    -fx-border-light: #353550;
+    -fx-border-focus: #667eea;
+    
+    /* Status Colors */
+    -fx-pending-color: #ffc107;
+    -fx-progress-color: #2196f3;
+    -fx-completed-color: #4caf50;
+    -fx-overdue-color: #f44336;
+    
+    /* Difficulty Colors */
+    -fx-easy-color: #4caf50;
+    -fx-medium-color: #ffc107;
+    -fx-hard-color: #ff9800;
+    -fx-expert-color: #f44336;
+    
+    /* Priority Colors */
+    -fx-priority-1: #f44336;
+    -fx-priority-2: #ff9800;
+    -fx-priority-3: #ffc107;
+    -fx-priority-4: #8bc34a;
+    -fx-priority-5: #4caf50;
+    
+    /* Shadow Effects */
+    -fx-shadow-color: rgba(0, 0, 0, 0.3);
+    -fx-shadow-glow: rgba(102, 126, 234, 0.3);
+    
+    /* Spacing */
+    -fx-padding-sm: 5px;
+    -fx-padding-md: 10px;
+    -fx-padding-lg: 20px;
+    -fx-padding-xl: 30px;
+    
+    /* Border Radius */
+    -fx-radius-sm: 4px;
+    -fx-radius-md: 8px;
+    -fx-radius-lg: 12px;
+    -fx-radius-xl: 20px;
+    
+    /* Font Sizes */
+    -fx-font-xs: 11px;
+    -fx-font-sm: 12px;
+    -fx-font-md: 14px;
+    -fx-font-lg: 16px;
+    -fx-font-xl: 18px;
+    -fx-font-xxl: 24px;
+    -fx-font-xxxl: 32px;
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+.root, .scene {
+    -fx-background-color: -fx-bg-primary;
+    -fx-font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* Scroll Panes */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 2px;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: -fx-primary-light;
+}
+
+/* ==================== BUTTONS ==================== */
+.button {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: -fx-font-md;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+.button:hover {
+    -fx-background-color: -fx-bg-card-hover;
+    -fx-border-color: -fx-primary-color;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 10, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-background-color: -fx-primary-dark;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-translate-y: 1px;
+}
+
+.button-primary {
+    -fx-background-color: -fx-primary-gradient;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-border-color: transparent;
+}
+
+.button-primary:hover {
+    -fx-background-color: linear-gradient(to right, #5a67d8, #6a3d91);
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 15, 0, 0, 4);
+}
+
+.button-success {
+    -fx-background-color: -fx-success-color;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-border-color: transparent;
+}
+
+.button-success:hover {
+    -fx-background-color: #45a049;
+}
+
+.button-warning {
+    -fx-background-color: -fx-warning-color;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-border-color: transparent;
+}
+
+.button-warning:hover {
+    -fx-background-color: #fb8c00;
+}
+
+.button-danger {
+    -fx-background-color: -fx-error-color;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-border-color: transparent;
+}
+
+.button-danger:hover {
+    -fx-background-color: #e53935;
+}
+
+.button-icon {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 5px;
+}
+
+.button-icon:hover {
+    -fx-background-color: -fx-bg-card-hover;
+    -fx-border-color: transparent;
+}
+
+/* ==================== TEXT FIELDS ==================== */
+.text-field, .password-field, .text-area {
+    -fx-background-color: -fx-bg-input;
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: -fx-font-md;
+    -fx-padding: 8px 12px;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 1px;
+    -fx-prompt-text-fill: -fx-text-tertiary;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: -fx-primary-color;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 8, 0, 0, 0);
+}
+
+.text-area .content {
+    -fx-background-color: -fx-bg-input;
+    -fx-background-radius: -fx-radius-md;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* ==================== LABELS ==================== */
+.label {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: -fx-font-md;
+}
+
+.label-header {
+    -fx-font-size: -fx-font-xxl;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.label-subheader {
+    -fx-font-size: -fx-font-xl;
+    -fx-font-weight: normal;
+    -fx-text-fill: -fx-text-secondary;
+}
+
+.label-title {
+    -fx-font-size: -fx-font-lg;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.label-success {
+    -fx-text-fill: -fx-success-color;
+}
+
+.label-warning {
+    -fx-text-fill: -fx-warning-color;
+}
+
+.label-error {
+    -fx-text-fill: -fx-error-color;
+}
+
+.label-info {
+    -fx-text-fill: -fx-info-color;
+}
+
+/* ==================== COMBO BOX ==================== */
+.combo-box {
+    -fx-background-color: -fx-bg-input;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 1px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: -fx-bg-input;
+    -fx-text-fill: -fx-text-primary;
+    -fx-padding: 8px 12px;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -fx-text-secondary;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -fx-bg-card;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-md;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
+
+/* ==================== TABLE VIEW ==================== */
+.table-view {
+    -fx-background-color: -fx-bg-table;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: -fx-radius-md -fx-radius-md 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-weight: bold;
+    -fx-padding: 12px;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: -fx-bg-table;
+    -fx-text-fill: -fx-text-secondary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: -fx-bg-table-alt;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: -fx-bg-card-hover;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
+
+.table-view .table-cell {
+    -fx-padding: 12px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* ==================== LIST VIEW ==================== */
+.list-view {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 1px;
+}
+
+.list-cell {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+    -fx-padding: 10px;
+}
+
+.list-cell:odd {
+    -fx-background-color: -fx-bg-secondary;
+}
+
+.list-cell:hover {
+    -fx-background-color: -fx-bg-card-hover;
+}
+
+.list-cell:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
+
+/* ==================== PROGRESS BAR ==================== */
+.progress-bar {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: -fx-radius-md;
+    -fx-pref-height: 10px;
+}
+
+.progress-bar .bar {
+    -fx-background-color: -fx-primary-gradient;
+    -fx-background-radius: -fx-radius-md;
+}
+
+.progress-bar .track {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: -fx-radius-md;
+}
+
+/* ==================== TAB PANE ==================== */
+.tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 120px;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: -fx-bg-secondary;
+    -fx-background-radius: -fx-radius-md -fx-radius-md 0 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: -fx-radius-md -fx-radius-md 0 0;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: -fx-font-md;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: -fx-bg-card-hover;
+}
+
+/* ==================== DIALOGS ==================== */
+.dialog-pane {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-lg;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: -fx-primary-gradient;
+    -fx-background-radius: -fx-radius-lg -fx-radius-lg 0 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-font-size: -fx-font-lg;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content {
+    -fx-background-color: -fx-bg-card;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: -fx-bg-tertiary;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: -fx-primary-color;
+}
+
+/* ==================== TOOLTIP ==================== */
+.tooltip {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-text-fill: -fx-text-primary;
+    -fx-background-radius: -fx-radius-md;
+    -fx-padding: 8px 12px;
+    -fx-font-size: -fx-font-sm;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-color, 10, 0, 0, 5);
+}
+
+/* ==================== CARDS AND CONTAINERS ==================== */
+.card {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-color, 10, 0, 0, 5);
+    -fx-padding: -fx-padding-lg;
+}
+
+.card-hover {
+    -fx-effect: dropshadow(gaussian, -fx-shadow-color, 10, 0, 0, 5);
+}
+
+.card-hover:hover {
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 15, 0, 0, 5);
+    -fx-translate-y: -2px;
+}
+
+/* ==================== CHART STYLES ==================== */
+.chart {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-padding-md;
+}
+
+.chart-title {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: -fx-font-lg;
+    -fx-font-weight: bold;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines {
+    -fx-stroke: -fx-border-color;
+}
+
+.chart-legend {
+    -fx-background-color: -fx-bg-card;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-md;
+}
+
+.axis-label {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: -fx-font-sm;
+}
+
+.axis-tick-label {
+    -fx-text-fill: -fx-text-tertiary;
+    -fx-font-size: -fx-font-xs;
+}
+
+/* ==================== SPLIT PANE ==================== */
+.split-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.split-pane-divider {
+    -fx-background-color: -fx-border-color;
+    -fx-pref-width: 1px;
+    -fx-pref-height: 1px;
+}
+
+/* ==================== MENU BAR ==================== */
+.menu-bar {
+    -fx-background-color: -fx-bg-secondary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menu-bar .menu {
+    -fx-background-color: transparent;
+}
+
+.menu-bar .menu .label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.menu-bar .menu:hover {
+    -fx-background-color: -fx-primary-color;
+}
+
+.menu-item {
+    -fx-background-color: -fx-bg-card;
+}
+
+.menu-item .label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.menu-item:hover {
+    -fx-background-color: -fx-primary-color;
+}
+
+/* ==================== DATE PICKER ==================== */
+.date-picker {
+    -fx-background-color: -fx-bg-input;
+    -fx-background-radius: -fx-radius-md;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: -fx-text-secondary;
+}
+
+.date-picker .cell {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.date-picker .cell:hover {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
+
+.date-picker .selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
+
+/* ==================== SLIDER ==================== */
+.slider .track {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: -fx-radius-md;
+}
+
+.slider .thumb {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 15px;
+    -fx-pref-height: 15px;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: -fx-primary-light;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+}
+
+/* ==================== CHECK BOX ==================== */
+.check-box {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.check-box .box {
+    -fx-background-color: -fx-bg-input;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-sm;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-primary-color;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -fx-text-on-primary;
+}
+
+/* ==================== RADIO BUTTON ==================== */
+.radio-button {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.radio-button .radio {
+    -fx-background-color: -fx-bg-input;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 50%;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: -fx-primary-color;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: -fx-text-on-primary;
+}
+
+/* ==================== TOGGLE BUTTON ==================== */
+.toggle-button {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-md;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-border-color: transparent;
+}
+
+/* ==================== CONTEXT MENU ==================== */
+.context-menu {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-md;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-color, 10, 0, 0, 5);
+}
+
+.context-menu .menu-item {
+    -fx-background-color: transparent;
+}
+
+.context-menu .menu-item .label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: -fx-primary-color;
+}
+
+/* ==================== TITLED PANE ==================== */
+.titled-pane {
+    -fx-background-color: transparent;
+}
+
+.titled-pane .title {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-md;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: -fx-radius-md;
+}
+
+.titled-pane .title .text {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-weight: bold;
+}
+
+.titled-pane .content {
+    -fx-background-color: -fx-bg-secondary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 0 0 -fx-radius-md -fx-radius-md;
+}
+
+/* ==================== HYPERLINK ==================== */
+.hyperlink {
+    -fx-text-fill: -fx-primary-color;
+    -fx-underline: false;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: -fx-primary-light;
+    -fx-underline: true;
+}
+
+/* ==================== PAGINATION ==================== */
+.pagination .page {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+    -fx-border-color: -fx-border-color;
+}
+
+.pagination .page:hover {
+    -fx-background-color: -fx-primary-color;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animated-card {
+    -fx-animation: fadeIn 0.3s ease-out;
+}
+
+.animated-slide {
+    -fx-animation: slideIn 0.3s ease-out;
+}
+
+.animated-pulse:hover {
+    -fx-animation: pulse 0.3s ease-out;
+}
+
+/* ==================== CUSTOM CLASSES FOR SYNCTRACK ==================== */
+.stat-card {
+    -fx-background-color: -fx-bg-card;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-padding-lg;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-color, 10, 0, 0, 5);
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 15, 0, 0, 5);
+    -fx-translate-y: -2px;
+}
+
+.stat-value {
+    -fx-font-size: -fx-font-xxxl;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-color;
+}
+
+.stat-label {
+    -fx-font-size: -fx-font-sm;
+    -fx-text-fill: -fx-text-secondary;
+}
+
+.progress-indicator {
+    -fx-progress-color: -fx-primary-color;
+}
+
+.badge {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+    -fx-padding: 2px 8px;
+    -fx-background-radius: -fx-radius-xl;
+    -fx-font-size: -fx-font-xs;
+    -fx-font-weight: bold;
+}
+
+.badge-success {
+    -fx-background-color: -fx-success-color;
+}
+
+.badge-warning {
+    -fx-background-color: -fx-warning-color;
+}
+
+.badge-danger {
+    -fx-background-color: -fx-error-color;
+}
+
+/* Task Priority Styles */
+.priority-1 {
+    -fx-background-color: -fx-priority-1;
+    -fx-text-fill: white;
+}
+
+.priority-2 {
+    -fx-background-color: -fx-priority-2;
+    -fx-text-fill: white;
+}
+
+.priority-3 {
+    -fx-background-color: -fx-priority-3;
+    -fx-text-fill: black;
+}
+
+.priority-4 {
+    -fx-background-color: -fx-priority-4;
+    -fx-text-fill: black;
+}
+
+.priority-5 {
+    -fx-background-color: -fx-priority-5;
+    -fx-text-fill: white;
+}
+
+/* Task Status Styles */
+.status-pending {
+    -fx-background-color: -fx-pending-color;
+    -fx-text-fill: black;
+}
+
+.status-progress {
+    -fx-background-color: -fx-progress-color;
+    -fx-text-fill: white;
+}
+
+.status-completed {
+    -fx-background-color: -fx-completed-color;
+    -fx-text-fill: white;
+}
+
+.status-overdue {
+    -fx-background-color: -fx-overdue-color;
+    -fx-text-fill: white;
+}
+
+/* Difficulty Styles */
+.difficulty-easy {
+    -fx-background-color: -fx-easy-color;
+    -fx-text-fill: white;
+}
+
+.difficulty-medium {
+    -fx-background-color: -fx-medium-color;
+    -fx-text-fill: black;
+}
+
+.difficulty-hard {
+    -fx-background-color: -fx-hard-color;
+    -fx-text-fill: white;
+}
+
+.difficulty-expert {
+    -fx-background-color: -fx-expert-color;
+    -fx-text-fill: white;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .stat-value {
+        -fx-font-size: -fx-font-xxl;
+    }
+    
+    .card {
+        -fx-padding: -fx-padding-md;
+    }
+    
+    .button {
+        -fx-padding: 6px 12px;
+        -fx-font-size: -fx-font-sm;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-center {
+    -fx-alignment: CENTER;
+}
+
+.text-right {
+    -fx-alignment: CENTER-RIGHT;
+}
+
+.text-left {
+    -fx-alignment: CENTER-LEFT;
+}
+
+.margin-sm {
+    -fx-padding: 5px;
+}
+
+.margin-md {
+    -fx-padding: 10px;
+}
+
+.margin-lg {
+    -fx-padding: 20px;
+}
+
+.margin-xl {
+    -fx-padding: 30px;
+}
+
+/* ==================== DARK MODE SPECIFIC OVERRIDES ==================== */
+/* Ensure all text is readable in dark mode */
+.text-input, .text-area, .combo-box, .list-view, .table-view {
+    -fx-text-fill: -fx-text-primary;
+}
+
+/* Glow effects for active elements */
+.button:focused, .text-field:focused, .combo-box:focused {
+    -fx-effect: dropshadow(gaussian, -fx-shadow-glow, 10, 0, 0, 2);
+}
+
+/* Selection colors */
+.selection {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-text-on-primary;
+}
